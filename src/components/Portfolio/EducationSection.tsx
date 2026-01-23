@@ -3,22 +3,22 @@ import { GraduationCap } from 'lucide-react';
 const education = [
   {
     level: 'Bachelor Degree',
-    school: 'VTU University, Karnataka',
+    school: 'Visvesvaraya Technological University, Karnataka',
     period: '2022 - 2026',
     cgpa: '7/10',
     description: 'Proficient in programming languages (Python, Java, C), machine learning, web development, and database management.',
     projects: ['Speech Emotion Recognition APP', 'NL to SQL Converter'],
   },
   {
-    level: '+2 Level,
+    level: 'Higher Secondary Education (Science Stream),
     school: 'Golden Gate International College - NEB Nepal',
     period: '2021 - 2022',
-    cgpa: '3.18/4',
+    cgpa: '2.88/4',
     description: 'Excelled in Mathematics, Physics, and Computer Science. Actively participated in science fairs and coding competitions.',
     projects: ['Coding Competitions'],
   },
   {
-    level: 'SEE (Secondary)',
+    level: 'Secondary Education Examination',
     school: 'NEB Nepal',
     period: '2019 - 2020',
     cgpa: '3.5/4',
