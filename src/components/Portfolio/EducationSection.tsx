@@ -2,30 +2,34 @@ import { GraduationCap } from 'lucide-react';
 
 const education = [
   {
-    level: 'Bachelor Degree',
+    level: 'Bachelor of Engineering (Information Science)',
     school: 'VTU University, Karnataka',
-    period: '2022 - 2026',
-    cgpa: '7/10',
-    description: 'Proficient in programming languages (Python, Java, C), machine learning, web development, and database management.',
-    projects: ['Speech Emotion Recognition APP', 'NL to SQL Converter'],
+    period: '2022 – 2026',
+    cgpa: '7.0 / 10.0',
+    description:
+      'Coursework and projects focused on software development, machine learning, web technologies, and database systems.',
+    projects: ['Speech Emotion Recognition App', 'Natural Language to SQL Converter'],
   },
   {
-    level: 'Higher Secondary Education (Science Stream),
-    school: 'Golden Gate International College - NEB Nepal',
-    period: '2021 - 2022',
-    cgpa: '2.88/4',
-    description: 'Excelled in Mathematics, Physics, and Computer Science. Actively participated in science fairs and coding competitions.',
-    projects: ['Coding Competitions'],
-  },
-  {
-    level: 'Secondary Education Examination',
-    school: 'NEB Nepal',
-    period: '2019 - 2020',
-    cgpa: '3.5/4',
-    description: 'Consistently demonstrated strong academic performance laying the foundation for future studies in science and technology.',
+    level: 'Higher Secondary Education (Science Stream)',
+    school: 'Golden Gate International College, NEB Nepal',
+    period: '2021 – 2022',
+    cgpa: '2.88 / 4.0',
+    description:
+      'Studied Mathematics, Physics, and Computer Science, with active participation in coding competitions and science exhibitions.',
     projects: [],
-  }
+  },
+  {
+    level: 'Secondary Education Examination (SEE)',
+    school: 'NEB Nepal',
+    period: '2019 – 2020',
+    cgpa: '3.5 / 4.0',
+    description:
+      'Completed secondary education with strong performance in science and mathematics subjects.',
+    projects: [],
+  },
 ];
+
 
 const EducationSection = () => {
   return (
