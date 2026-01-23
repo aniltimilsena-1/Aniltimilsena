@@ -11,10 +11,10 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 fade-in-up">
             <p className="text-muted-foreground leading-relaxed text-lg text-justify">
-              I'm a recent Information Science and Engineering graduate from VTU University, Karnataka, with a strong foundation in software development, machine learning, and data science. My passion lies in exploring how AI and deep learning can solve complex real-world problems.
+             I’m an Information Science and Engineering graduate from VTU, Karnataka, trained in software development, machine learning, and data science, with a clear focus on using AI and deep learning to solve concrete, real-world problems.
             </p>
             <p className="text-muted-foreground leading-relaxed text-lg text-justify">
-              With hands-on experience at MindMatrix and other companies, I've developed a robust understanding of both cutting-edge AI technologies and practical software engineering principles. I'm eager to contribute to innovative projects that push the boundaries of what's possible.
+             Through hands-on experience at MindMatrix and other companies, I’ve worked with modern AI tools while applying solid software engineering practices to real production problems. I’m looking to contribute to teams building impactful, technically rigorous solutions.
             </p>
 
             <div className="flex gap-5 pt-4">
