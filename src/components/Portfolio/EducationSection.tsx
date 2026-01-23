@@ -3,7 +3,7 @@ import { GraduationCap } from 'lucide-react';
 const education = [
   {
     level: 'Bachelor Degree',
-    school: 'Visvesvaraya Technological University, Karnataka',
+    school: 'VTU University, Karnataka',
     period: '2022 - 2026',
     cgpa: '7/10',
     description: 'Proficient in programming languages (Python, Java, C), machine learning, web development, and database management.',
