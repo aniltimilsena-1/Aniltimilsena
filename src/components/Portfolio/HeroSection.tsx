@@ -1,4 +1,4 @@
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface HeroSectionProps {
@@ -62,10 +62,21 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             View My Work
           </Button>
           <Button
-            onClick={() => onNavigate('contact')}
             variant="outline"
             size="lg"
-            className="px-8 py-6 text-base font-medium border-primary/50 text-primary hover:bg-primary/10"
+            className="px-8 py-6 text-base font-medium border-primary/50 text-white hover:bg-primary/10"
+            asChild
+          >
+            <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <FileText size={20} />
+              Resume
+            </a>
+          </Button>
+          <Button
+            onClick={() => onNavigate('contact')}
+            variant="ghost"
+            size="lg"
+            className="px-8 py-6 text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5"
           >
             Get In Touch
           </Button>
