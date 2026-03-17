@@ -77,7 +77,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             className="px-8 py-7 text-lg font-medium border-border/50 bg-background/50 backdrop-blur-sm hover:bg-muted rounded-full transition-all duration-300 active:scale-95"
             asChild
           >
-            <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground">
+            <a href="/Anil_Timilsena_Resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground">
               <FileText size={20} />
               View Resume
             </a>
