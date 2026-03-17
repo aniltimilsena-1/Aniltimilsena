@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 px-4 relative z-10">
+    <section id="contact" className="py-24 px-6 relative z-10">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="section-heading font-serif">
           <span className="gradient-text">Let's Work Together</span>

@@ -1,31 +1,27 @@
 const AmbientBackground = () => {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-      {/* Primary ambient blob - slow movement */}
-      <div 
-        className="ambient-blob absolute top-20 left-10 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px]"
-        style={{ animationDelay: '0s' }}
-      />
+    <div className="fixed inset-0 -z-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 bg-background transition-colors duration-1000" />
       
-      {/* Secondary ambient blob */}
+      {/* Dynamic Blobs with improved color blending */}
       <div 
-        className="ambient-blob absolute top-1/3 right-10 w-[400px] h-[400px] rounded-full bg-secondary/15 blur-[100px]"
-        style={{ animationDelay: '4s' }}
+        className="ambient-blob absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-primary/20 blur-[120px]" 
+        style={{ animationDuration: '25s' }}
       />
-      
-      {/* Accent ambient blob */}
       <div 
-        className="ambient-blob absolute bottom-20 left-1/3 w-[450px] h-[450px] rounded-full bg-accent/10 blur-[120px]"
-        style={{ animationDelay: '8s' }}
+        className="ambient-blob absolute bottom-[-5%] right-[-5%] w-[50%] h-[50%] rounded-full bg-secondary/20 blur-[100px]" 
+        style={{ animationDuration: '30s', animationDelay: '-5s' }}
+      />
+      <div 
+        className="ambient-blob absolute top-[20%] right-[10%] w-[40%] h-[40%] rounded-full bg-accent/10 blur-[110px]" 
+        style={{ animationDuration: '35s', animationDelay: '-10s' }}
       />
 
-      {/* Subtle grid pattern overlay */}
+      {/* Modern Grid/Grain Overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
         }}
       />
     </div>

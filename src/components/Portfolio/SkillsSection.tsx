@@ -1,42 +1,81 @@
+import { motion } from 'framer-motion';
+
 const skills = [
-  { category: 'Languages', items: ['Python', 'JavaScript', 'Java', 'C'] },
-  { category: 'ML/AI', items: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'OpenCV', 'NLP', 'LLM'] },
-  { category: 'Backend', items: ['Django', 'Flask', 'Node.js'] },
-  { category: 'Frontend', items: ['React', 'Angular.js', 'TailwindCSS', 'HTML5'] },
-  { category: 'Tools', items: ['Git', 'Docker', 'Kubernetes', 'AWS', 'Google Cloud'] },
-  { category: 'Databases', items: ['PostgreSQL', 'MongoDB', 'SQLite'] },
+  { category: 'AI & Machine Learning', items: ['Scikit-learn', 'NLP', 'GenAI'] },
+  { category: 'Full-Stack Development', items: ['React', 'Next.js', 'Node.js', 'TailwindCSS'] },
+  { category: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'Java', 'Kotlin', 'SQL'] },
+  { category: 'Cloud & DevOps', items: ['AWS', 'Google Cloud', 'Docker', 'Vercel'] },
+  { category: 'Databases', items: ['MongoDB', 'Redis'] },
 ];
 
 const SkillsSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
-    <section id="skills" className="py-24 px-4 relative z-10">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="section-heading font-serif">
-          <span className="gradient-text">Skills & Technologies</span>
-        </h2>
+    <section id="skills" className="py-32 px-6 relative z-10 bg-muted/10">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16 space-y-4">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold tracking-tight"
+          >
+            Technical <span className="text-primary">Arsenal</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-muted-foreground text-lg"
+          >
+            A comprehensive overview of the tools and technologies I leverage to build the future.
+          </motion.p>
+        </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {skills.map((skill, idx) => (
-            <div 
+            <motion.div 
               key={idx} 
-              className="gradient-border hover-lift p-6 rounded-xl"
+              variants={itemVariants}
+              className="p-8 rounded-3xl bg-background border border-border/50 hover:border-primary/30 transition-all duration-300 group"
             >
-              <h3 className="text-lg font-serif font-semibold text-primary mb-4">
+              <h3 className="text-xl font-bold text-foreground mb-6 group-hover:text-primary transition-colors">
                 {skill.category}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {skill.items.map((item, i) => (
                   <span 
                     key={i} 
-                    className="skill-badge"
+                    className="px-4 py-2 rounded-xl bg-muted text-muted-foreground text-sm font-medium hover:bg-primary/10 hover:text-primary transition-all duration-300"
                   >
                     {item}
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

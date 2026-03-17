@@ -21,8 +21,12 @@ const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
     <nav className="fixed w-full top-0 z-50 glass-card border-b border-primary/20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <a href="#home" className="text-2xl font-serif font-bold gradient-text">
-            AT
+          <a href="#home" className="flex items-center gap-3 group relative">
+            <div className="relative flex items-center justify-center">
+              <span className="text-2xl font-black tracking-tighter text-primary drop-shadow-[0_0_8px_rgba(var(--primary),0.8)] transition-all duration-300 group-hover:scale-110">
+                AT
+              </span>
+            </div>
           </a>
 
           {/* Desktop Menu */}

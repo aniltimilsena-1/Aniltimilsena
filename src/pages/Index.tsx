@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
-import AmbientBackground from '@/components/Portfolio/AmbientBackground';
 import Navigation from '@/components/Portfolio/Navigation';
 import HeroSection from '@/components/Portfolio/HeroSection';
 import AboutSection from '@/components/Portfolio/AboutSection';
@@ -58,7 +57,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <AmbientBackground />
       <Navigation activeSection={activeSection} onNavigate={handleNavigate} />
       <HeroSection onNavigate={handleNavigate} />
       <AboutSection />

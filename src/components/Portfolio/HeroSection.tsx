@@ -1,95 +1,122 @@
-import { ChevronDown, Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, FileText, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 interface HeroSectionProps {
   onNavigate: (section: string) => void;
 }
 
 const HeroSection = ({ onNavigate }: HeroSectionProps) => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] },
+    },
+  };
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 md:px-4 pt-16 relative z-10">
-      <div className="text-center space-y-8 max-w-3xl">
-        <div className="space-y-6">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-tight leading-tight">
-            Hi, I'm{' '}
-            <span className="text-black dark:text-white">Anil Timilsena</span>
+    <section id="home" className="min-h-[90vh] flex items-center justify-center px-6 md:px-4 pt-20 relative z-10 overflow-hidden">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="text-center space-y-10 max-w-4xl"
+      >
+        <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-2">
+          <Sparkles size={14} className="animate-pulse" />
+          <span>Available for New Opportunities</span>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="space-y-4">
+          <h1 className="text-5xl md:text-8xl font-serif font-bold tracking-tight leading-none text-foreground">
+            Anil <span className="text-primary italic">Timilsena</span>
           </h1>
-          <p className="text-base md:text-2xl text-black dark:text-white font-serif font-bold text-center">
-            Software Engineer • ML Enthusiast
-          </p>
-          <p className="text-base md:text-2xl text-black dark:text-white font-serif font-bold text-center">
-            Full-Stack Developer
-          </p>
-        </div>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-lg md:text-2xl font-medium text-muted-foreground">
+            <span>Software Engineer</span>
+            <span className="hidden md:inline">•</span>
+            <span>AI/ML Specialist</span>
+            <span className="hidden md:inline">•</span>
+            <span>Full-Stack Developer</span>
+          </div>
+        </motion.div>
 
-        <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto text-balance text-center">
-          Passionate Information Science Engineer with expertise in Machine Learning, AI, and full-stack web development.
-          Specialized in building intelligent solutions using deep learning and modern frameworks.
-        </p>
+        <motion.p 
+          variants={itemVariants}
+          className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto text-balance"
+        >
+          I build intelligent, scalable solutions at the intersection of 
+          <span className="text-foreground font-semibold"> Deep Learning</span> and 
+          <span className="text-foreground font-semibold"> Modern Web Engineering</span>. 
+          Currently focused on Generative AI and production-grade ML applications.
+        </motion.p>
 
-        {/* Social Links */}
-        <div className="flex justify-center gap-6 pt-4">
-          <a
-            href="https://github.com/aniltimilsena-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon-hover text-black dark:text-white"
-          >
-            <Github size={24} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/anil-timilsena-3314b12a9"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon-hover text-black dark:text-white"
-          >
-            <Linkedin size={24} />
-          </a>
-          <a
-            href="mailto:aniltimilsena53@gmail.com"
-            className="icon-hover text-black dark:text-white"
-          >
-            <Mail size={24} />
-          </a>
-        </div>
-
-        <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
           <Button
             onClick={() => onNavigate('projects')}
-            size="lg"
-            className="px-8 py-6 text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90 subtle-glow"
+            size="xl"
+            className="px-8 py-7 text-lg font-medium bg-primary text-primary-foreground hover:bg-primary/90 rounded-full transition-all duration-300 shadow-xl shadow-primary/20 hover:shadow-primary/30 active:scale-95"
           >
-            View My Work
+            Explore Projects
           </Button>
           <Button
             variant="outline"
-            size="lg"
-            className="px-8 py-6 text-base font-medium border-primary/50 text-white hover:bg-primary/10"
+            size="xl"
+            className="px-8 py-7 text-lg font-medium border-border/50 bg-background/50 backdrop-blur-sm hover:bg-muted rounded-full transition-all duration-300 active:scale-95"
             asChild
           >
-            <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground">
               <FileText size={20} />
-              Resume
+              View Resume
             </a>
           </Button>
-          <Button
-            onClick={() => onNavigate('contact')}
-            variant="ghost"
-            size="lg"
-            className="px-8 py-6 text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5"
-          >
-            Get In Touch
-          </Button>
-        </div>
+        </motion.div>
 
-        <div className="pt-16">
+        {/* Social Links */}
+        <motion.div variants={itemVariants} className="flex justify-center gap-8 pt-6">
+          {[
+            { icon: Github, href: "https://github.com/aniltimilsena-1", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/anil-timilsena-3314b12a9", label: "LinkedIn" },
+            { icon: Mail, href: "mailto:aniltimilsena53@gmail.com", label: "Email" }
+          ].map((social, i) => (
+            <a
+              key={i}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300 transform hover:scale-110"
+              title={social.label}
+            >
+              <social.icon size={26} />
+            </a>
+          ))}
+        </motion.div>
+
+        <motion.div 
+          variants={itemVariants}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="pt-20"
+        >
           <ChevronDown
-            className="mx-auto text-black gentle-pulse cursor-pointer"
-            size={28}
+            className="mx-auto text-muted-foreground cursor-pointer hover:text-primary transition-colors"
+            size={32}
             onClick={() => onNavigate('about')}
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

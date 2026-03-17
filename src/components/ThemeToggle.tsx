@@ -6,9 +6,9 @@ const ThemeToggle = () => {
         // Check localStorage, default to light theme
         if (typeof window !== 'undefined') {
             const saved = localStorage.getItem('theme');
-            return saved === 'dark';
+            return saved !== 'light'; // Default to true (dark) if not explicitly 'light'
         }
-        return false;
+        return true;
     });
 
     useEffect(() => {
